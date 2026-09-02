@@ -3,6 +3,12 @@
 
 /* GET HTML ELEMENTS  */
 
+// Modes
+
+const killerMode = document.getElementById("killerMode");
+const survivorMode = document.getElementById("survivorMode");
+const blendMode = document.getElementById("blendMode");
+
 // Screens
 const setupScreen = document.getElementById("setupScreen");
 const gameScreen = document.getElementById("gameScreen");
@@ -31,13 +37,14 @@ const gameState = {
     mode: "quiz",
 
     quiz: {
-        timerEnabled: false,
-        timePerQuestion: 10,
-        guessType: "logo",
-        totalQuestions: 10,
-        currentQuestion: 0,
-        score: 0
-    },
+    timerEnabled: false,
+    timePerQuestion: 10,
+    guessType: "logo",
+    perkType: "blend",
+    totalQuestions: 10,
+    currentQuestion: 0,
+    score: 0
+},
 
     skillCheck: {
         mode: "normal",
@@ -149,9 +156,42 @@ startButton.addEventListener("click", function () {
     // Make sure results are hidden
     resultsScreen.hidden = true;
 
-
     console.log("Game started!");
     console.log(gameState);
 
 });
 
+/* ---------- PERK TYPE ---------- */
+
+// Killer
+killerMode.addEventListener("click", function () {
+
+    gameState.quiz.perkType = "killer";
+
+    killerMode.classList.add("selected");
+    survivorMode.classList.remove("selected");
+    blendMode.classList.remove("selected");
+
+});
+
+// Survivor
+survivorMode.addEventListener("click", function () {
+
+    gameState.quiz.perkType = "survivor";
+
+    survivorMode.classList.add("selected");
+    killerMode.classList.remove("selected");
+    blendMode.classList.remove("selected");
+
+});
+
+// Blend
+blendMode.addEventListener("click", function () {
+
+    gameState.quiz.perkType = "blend";
+
+    blendMode.classList.add("selected");
+    killerMode.classList.remove("selected");
+    survivorMode.classList.remove("selected");
+
+});
