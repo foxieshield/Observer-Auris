@@ -36,7 +36,10 @@ const questionContent = document.getElementById("questionContent");
 
 const answers = document.getElementById("answers");
 
+const finalScore = document.getElementById("finalScore");
+
 const nextButton = document.getElementById("nextButton");
+
 /*  GAME STATE */
 
 const gameState = {
@@ -523,5 +526,57 @@ function checkAnswer(
     */
 
     nextButton.hidden = false;
+
+}
+
+/*
+   NEXT QUESTION
+ */
+
+nextButton.addEventListener("click", function () {
+
+    // Move to the next question
+    gameState.quiz.currentQuestion++;
+
+    /*
+        Check if we've reached the end
+        of the quiz.
+    */
+
+    if (
+        gameState.quiz.currentQuestion >=
+        gameState.quiz.totalQuestions
+    ) {
+
+        showResults();
+
+        return;
+
+    }
+
+    // Hide the button while the new question loads
+    nextButton.hidden = true;
+
+    // Create the next question
+    createQuestion();
+
+});
+
+/*
+   RESULTS
+ */
+
+function showResults() {
+
+    // Hide the game
+    gameScreen.hidden = true;
+
+    // Show results
+    resultsScreen.hidden = false;
+
+
+    // Display score
+    finalScore.textContent =
+        `${gameState.quiz.score} / ${gameState.quiz.totalQuestions}`;
 
 }
