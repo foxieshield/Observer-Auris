@@ -15,7 +15,7 @@ const perks = [
         type: "survivor",
         description: `
         Whenever you loot an item from a chest, it will have: 
-        •a Viscerla or lower rarity add-on.
+        •a Visceral or lower rarity add-on.
         •100% chance for uncommon or lower rarity add-on.
         `,
         image: ""
