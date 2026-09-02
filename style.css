@@ -1,1 +1,397 @@
+```css
+/*
+   OBSERVER AURIS
+   Main Styles
+  */
+
+/* ---------- GENERAL ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #111;
+    color: #eee;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+/* ---------- MAIN APP ---------- */
+
+#app {
+    width: 100%;
+    max-width: 700px;
+
+    text-align: center;
+}
+
+/* ---------- HEADINGS ---------- */
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+
+    letter-spacing: 3px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+p {
+    color: #aaa;
+}
+
+
+/* ---------- SETUP ---------- */
+
+.setting {
+    margin: 30px 0;
+}
+
+.setting button,
+.setting select,
+#startButton,
+#nextButton,
+#restartButton {
+    padding: 12px 22px;
+
+    margin: 5px;
+
+    border: 1px solid #555;
+    border-radius: 6px;
+
+    background-color: #222;
+    color: #eee;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* ---------- BUTTON HOVER ---------- */
+
+button:hover {
+    background-color: #333;
+    border-color: #888;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* ---------- SELECT ---------- */
+
+select {
+    cursor: pointer;
+}
+
+
+/* ---------- SELECTED SETTING ---------- */
+
+.setting button.selected {
+    background-color: #444;
+    border-color: #aaa;
+}
+
+
+/* ---------- START BUTTON ---------- */
+
+#startButton {
+    margin-top: 20px;
+
+    padding: 15px 45px;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* ---------- GAME SCREEN ---------- */
+
+#gameScreen {
+    width: 100%;
+}
+
+
+/* ---------- QUESTION NUMBER ---------- */
+
+#questionNumber {
+    font-size: 1rem;
+    color: #888;
+
+    margin-bottom: 30px;
+}
+
+
+/* ---------- TIMER ---------- */
+
+#timerDisplay {
+    font-size: 1.5rem;
+
+    margin-bottom: 20px;
+
+    min-height: 30px;
+}
+
+
+/* ---------- QUESTION CONTENT ---------- */
+
+#questionContent {
+    min-height: 180px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    /*
+        Animation foundation.
+
+        Later JavaScript can add:
+        .question-enter
+        .question-visible
+        .question-leave
+    */
+}
+
+.question-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.question-visible {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+
+/* ---------- PERK IMAGE ---------- */
+
+.perk-image {
+    width: 180px;
+    height: 180px;
+
+    object-fit: contain;
+
+    opacity: 0;
+
+    animation: perkFadeIn 0.6s ease forwards;
+}
+
+
+@keyframes perkFadeIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/*  ANSWERS  */
+
+#answers {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    width: 100%;
+}
+
+
+/*  ANSWER BUTTON */
+
+.answer-button {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: 1px solid #444;
+    border-radius: 6px;
+
+    background-color: #1c1c1c;
+    color: #eee;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    animation: answerSlideIn 0.45s ease forwards;
+
+    transition:
+        background-color 0.25s ease,
+        opacity 0.3s ease,
+        filter 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+/*
+    Each answer enters slightly after the previous one.
+*/
+
+.answer-button:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.answer-button:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.answer-button:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.answer-button:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.answer-button:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+
+@keyframes answerSlideIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/*  ANSWER STATES  */
+
+.answer-button.correct {
+    background-color: #285c38;
+    border-color: #4caf6a;
+}
+
+.answer-button.wrong {
+    background-color: #642d2d;
+    border-color: #d95353;
+}
+
+
+/*
+    Once an answer has been selected,
+    the remaining answers can be blurred.
+*/
+
+.answer-button.blurred {
+
+    filter: blur(4px);
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+
+/*  NEXT BUTTON  */
+
+#nextButton {
+
+    margin-top: 25px;
+
+    padding: 14px 35px;
+
+    font-weight: bold;
+}
+
+
+/*  RESULTS */
+
+#finalScore {
+
+    font-size: 4rem;
+
+    font-weight: bold;
+
+    margin: 40px 0;
+}
+
+
+/* MOBILE  */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .perk-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .answer-button {
+        padding: 14px;
+    }
+
+}
+
+
+/*  REDUCED MOTION  */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+```
 
