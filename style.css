@@ -358,6 +358,20 @@ select {
     margin: 40px 0;
 }
 
+#leaveButton {
+    margin-top: 15px;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    color: #aaa;
+    background-color: transparent;
+    border: 1px solid #444;
+}
+
+#leaveButton:hover {
+    color: #eee;
+    border-color: #777;
+    background-color: #222;
+}
 
 /* MOBILE  */
 
