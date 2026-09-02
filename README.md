@@ -1,2 +1,2 @@
 # Observer-Auris
-Perk guessing minigame For DeadByDaylight 
+DeadByDaylight inspired mini games
