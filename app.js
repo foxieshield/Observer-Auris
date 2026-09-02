@@ -48,14 +48,15 @@ const gameState = {
 
     mode: "quiz",
 
-    quiz: {
+ quiz: {
     timerEnabled: false,
     timePerQuestion: 10,
     guessType: "logo",
     perkType: "blend",
     totalQuestions: 10,
     currentQuestion: 0,
-    score: 0
+    score: 0,
+    usedPerks: []
 },
 
     skillCheck: {
@@ -239,81 +240,44 @@ function getAvailablePerks() {
 /* ---------- CREATE QUESTION ---------- */
 
 function createQuestion() {
-
     const availablePerks = getAvailablePerks();
 
-
-    /*
-        Make sure we have enough perks
-        to create five answer choices.
-    */
-
     if (availablePerks.length < 5) {
-
-        console.error(
-            "Not enough perks available to create a question."
-        );
-
+        console.error("Not enough perks available to create a question.");
         return;
-
     }
 
+    // Remove perks that have already been used
+    const unusedPerks = availablePerks.filter(function (perk) {
+        return !gameState.quiz.usedPerks.includes(perk.name);
+    });
 
-    /*
-        Shuffle the available perks.
-        The first one becomes the correct answer.
-    */
+    // If we've used every perk, allow the pool to reset
+    if (unusedPerks.length === 0) {
+        gameState.quiz.usedPerks = [];
+    }
 
-    const shuffledPerks = shuffleArray(
-        [...availablePerks]
-    );
+    const questionPool =
+        unusedPerks.length >= 5
+            ? unusedPerks
+            : availablePerks;
 
+    const shuffledPerks = shuffleArray([...questionPool]);
 
     const correctPerk = shuffledPerks[0];
 
-
-    /*
-        The next four become incorrect answers.
-    */
+    // Mark this perk as used
+    gameState.quiz.usedPerks.push(correctPerk.name);
 
     const wrongPerks = shuffledPerks.slice(1, 5);
 
-
-    /*
-        Combine the correct answer and
-        incorrect answers.
-    */
-
-    const answerChoices = [
-        correctPerk,
-        ...wrongPerks
-    ];
-
-
-    /*
-        Shuffle the five choices so the
-        correct answer isn't always first.
-    */
+    const answerChoices = [correctPerk, ...wrongPerks];
 
     shuffleArray(answerChoices);
 
-
-    /*
-        Store the current question.
-    */
-
     gameState.quiz.currentPerk = correctPerk;
 
-
-    /*
-        Display everything.
-    */
-
-    displayQuestion(
-        correctPerk,
-        answerChoices
-    );
-
+    displayQuestion(correctPerk, answerChoices);
 }
 
 
