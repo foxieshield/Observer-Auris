@@ -587,7 +587,7 @@ function showResults() {
 
     finalScore.textContent =
         `${gameState.quiz.score} / ${gameState.quiz.totalQuestions}`;
-}
+
    
 //makes play again work
    
