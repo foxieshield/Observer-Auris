@@ -353,20 +353,18 @@ if (gameState.quiz.guessType === "logo") {
 
         questionContent.appendChild(placeholder);
     }
+
+} else {
+
+    const description =
+        document.createElement("p");
+
+    description.innerText = correctPerk.description;
+
+    description.classList.add("question-description");
+
+    questionContent.appendChild(description);
 }
-    } else {
-
-        const description =
-            document.createElement("p");
-
-        description.innerText = correctPerk.description;
-
-        description.classList.add("question-description");
-
-        questionContent.appendChild(description);
-
-    }
-
 
     /*
         Create the five answer buttons.
