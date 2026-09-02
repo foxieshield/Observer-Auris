@@ -416,6 +416,64 @@ while you are not the obsession:
         image: ""
     },
 
+{
+        name: "Celestial Witness",
+        type: "killer",
+        description: `
+        Every 20s, if the obsession is atleast 40m away
+        from you, you see their aura for 3s. otherwise, the
+        farthest survivor becomes the obsession
+        `,
+        image: ""
+    },
+
+{
+        name: "Corrupt intervention",
+        type: "killer",
+        description: `
+    When the trial starts, the 3 farthest generators
+    from you are blocked for 120s, or until you down a Survivor
+        `,
+        image: ""
+    },
+
+{
+        name: "Coulrophobia",
+        type: "killer",
+        description: `
+    Survivors within your terror radius:
+     •heal 30% slower
+      •While healing, basic skill 
+      checks spin 50% faster
+        `,
+        image: ""
+    },
+
+{
+        name: "Coup De Grace",
+        type: "killer",
+        description: `
+     Whenever a generator is completed, you earn 2 
+     tokens up to 5
+
+
+     whenever you lounge-attack, spend 1 token to make
+     it 80% longer
+        `,
+        image: ""
+    },
+
+{
+        name: "Cruel Limits",
+        type: "killer",
+        description: `
+    Whenever a Generator is completed:
+     •You see the auras of all windows for 30s
+      •All windows are blocked for survivors for 30s
+        `,
+        image: ""
+    },
+
 
 
 
