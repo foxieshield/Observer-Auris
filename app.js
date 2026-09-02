@@ -370,8 +370,7 @@ function displayQuestion(correctPerk, answerChoices) {
         const description =
             document.createElement("p");
 
-        description.textContent =
-            correctPerk.description;
+        description.innerText = correctPerk.description;
 
         description.classList.add("question-description");
 
