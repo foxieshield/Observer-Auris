@@ -3,6 +3,8 @@
 
 /* GET HTML ELEMENTS  */
 
+//secret
+const title = document.querySelector("#setupScreen h1");
 // Modes
 
 const killerMode = document.getElementById("killerMode");
@@ -579,3 +581,35 @@ function showResults() {
         `${gameState.quiz.score} / ${gameState.quiz.totalQuestions}`;
 
 }
+
+/* =========================================
+   EASTER EGG
+   ========================================= */
+
+let titleClicks = 0;
+let titleClickTimer;
+
+title.addEventListener("click", function () {
+
+    titleClicks++;
+
+    clearTimeout(titleClickTimer);
+
+    titleClickTimer = setTimeout(function () {
+
+        titleClicks = 0;
+
+    }, 1000);
+
+
+    if (titleClicks >= 4) {
+
+        alert(
+            "💜 Made for you with love, sweat, and loots of survivor blood 🫪"
+        );
+
+        titleClicks = 0;
+
+    }
+
+});
