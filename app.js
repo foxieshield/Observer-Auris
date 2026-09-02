@@ -38,10 +38,10 @@ const questionContent = document.getElementById("questionContent");
 
 const answers = document.getElementById("answers");
 
-const finalScore = document.getElementById("finalScore");
-
 const nextButton = document.getElementById("nextButton");
-
+const leaveButton = document.getElementById("leaveButton");
+const restartButton = document.getElementById("restartButton");
+const finalScore = document.getElementById("finalScore");
 /*  GAME STATE */
 
 const gameState = {
