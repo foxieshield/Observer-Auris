@@ -61,7 +61,7 @@ const perks = [
         While next to a Dropped Pallet, use 'A', 'circle' or 'left Click' for 3s to reset it. 
         you see the aura of dropped pallets
         `,
-        image: "assets/anymeansnecesary.png"
+        image: "assets/anymeansnecessary.png"
     },
 
     {
