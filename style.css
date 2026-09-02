@@ -145,15 +145,12 @@ select {
 
 
 /* ---------- TIMER ---------- */
-
 #timerDisplay {
-    font-size: 1.5rem;
-
+    font-size: 1.8rem;
+    font-weight: bold;
     margin-bottom: 20px;
-
-    min-height: 30px;
+    min-height: 35px;
 }
-
 
 /* ---------- QUESTION CONTENT ---------- */
 
