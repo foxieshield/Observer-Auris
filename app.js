@@ -42,6 +42,8 @@ const nextButton = document.getElementById("nextButton");
 const leaveButton = document.getElementById("leaveButton");
 const restartButton = document.getElementById("restartButton");
 const finalScore = document.getElementById("finalScore");
+
+let timerInterval;
 /*  GAME STATE */
 
 const gameState = {
@@ -384,16 +386,65 @@ function displayQuestion(correctPerk, answerChoices) {
 
         });
 
-
         answers.appendChild(button);
 
     });
-
+startTimer();
 }
 
-/* =========================================
+function startTimer() {
+    clearInterval(timerInterval);
+
+    if (!gameState.quiz.timerEnabled) {
+        timerDisplay.textContent = "";
+        return;
+    }
+
+    let timeLeft = gameState.quiz.timePerQuestion;
+
+    timerDisplay.textContent = `${timeLeft}s`;
+
+    timerInterval = setInterval(function () {
+        timeLeft--;
+
+        timerDisplay.textContent = `${timeLeft}s`;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+
+            timeLeft = 0;
+            timerDisplay.textContent = "TIME'S UP!";
+
+            handleTimeUp();
+        }
+    }, 1000);
+}
+
+function handleTimeUp() {
+    const buttons = document.querySelectorAll(".answer-button");
+
+    buttons.forEach(function (button) {
+        button.disabled = true;
+    });
+
+    // Show the correct answer
+    buttons.forEach(function (button) {
+        if (
+            button.dataset.perkName ===
+            gameState.quiz.currentPerk.name
+        ) {
+            button.classList.add("correct");
+        } else {
+            button.classList.add("blurred");
+        }
+    });
+
+    nextButton.hidden = false;
+}
+
+/* 
    ANSWER CHECKING
-   ========================================= */
+  */
 
 function checkAnswer(
     selectedButton,
@@ -401,11 +452,8 @@ function checkAnswer(
     correctPerk,
     answerChoices
 ) {
-
-    /*
-        Get every answer button.
-    */
-
+    clearInterval(timerInterval);
+   
     const buttons =
         document.querySelectorAll(".answer-button");
 
@@ -532,17 +580,14 @@ nextButton.addEventListener("click", function () {
  */
 
 function showResults() {
+    clearInterval(timerInterval);
 
-    // Hide the game
     gameScreen.hidden = true;
-
-    // Show results
     resultsScreen.hidden = false;
 
-
-    // Display score
     finalScore.textContent =
         `${gameState.quiz.score} / ${gameState.quiz.totalQuestions}`;
+}
    
 //makes play again work
    
@@ -562,6 +607,8 @@ restartButton.addEventListener("click", function () {
 //leave match
 
 leaveButton.addEventListener("click", function () {
+   clearInterval(timerInterval);
+   
     gameScreen.hidden = true;
     resultsScreen.hidden = true;
     setupScreen.hidden = false;
