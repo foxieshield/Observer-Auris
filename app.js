@@ -30,6 +30,13 @@ const questionCount = document.getElementById("questionCount");
 // Start
 const startButton = document.getElementById("startButton");
 
+const questionNumber = document.getElementById("questionNumber");
+
+const questionContent = document.getElementById("questionContent");
+
+const answers = document.getElementById("answers");
+
+const nextButton = document.getElementById("nextButton");
 /*  GAME STATE */
 
 const gameState = {
@@ -109,17 +116,15 @@ descriptionMode.addEventListener("click", function () {
 
 questionCount.addEventListener("change", function () {
 
-    gameState.quiz.totalQuestions =
-        Number(questionCount.value);
-
+    gameState.quiz.totalQuestions = Number(questionCount.value);
+   
 });
 
 /*  TIME SELECTION  */
 
 timeSelect.addEventListener("change", function () {
 
-    gameState.quiz.timePerQuestion =
-        Number(timeSelect.value);
+    gameState.quiz.timePerQuestion = Number(timeSelect.value);
 
 });
 
@@ -127,25 +132,12 @@ timeSelect.addEventListener("change", function () {
 
 startButton.addEventListener("click", function () {
 
-    /*
-        Reset the quiz before starting.
-        This is important when the player
-        chooses "Play Again" later.
-    */
-
     gameState.quiz.currentQuestion = 0;
     gameState.quiz.score = 0;
 
-    /*
-        Make sure the latest settings
-        are stored.
-    */
+    gameState.quiz.totalQuestions = Number(questionCount.value);
 
-    gameState.quiz.totalQuestions =
-        Number(questionCount.value);
-
-    gameState.quiz.timePerQuestion =
-        Number(timeSelect.value);
+    gameState.quiz.timePerQuestion = Number(timeSelect.value);
 
     // Hide setup
     setupScreen.hidden = true;
@@ -159,6 +151,7 @@ startButton.addEventListener("click", function () {
     console.log("Game started!");
     console.log(gameState);
 
+createQuestion();
 });
 
 /* ---------- PERK TYPE ---------- */
@@ -195,3 +188,340 @@ blendMode.addEventListener("click", function () {
     survivorMode.classList.remove("selected");
 
 });
+
+/* =========================================
+   QUESTION GENERATION
+   ========================================= */
+
+
+/* ---------- SHUFFLE ARRAY ---------- */
+
+function shuffleArray(array) {
+
+    return array.sort(function () {
+        return Math.random() - 0.5;
+    });
+
+}
+
+
+/* ---------- GET AVAILABLE PERKS ---------- */
+
+function getAvailablePerks() {
+
+    // Start with every perk
+    let availablePerks = perks;
+
+
+    // If Killer or Survivor was selected,
+    // filter the database.
+    if (gameState.quiz.perkType !== "blend") {
+
+        availablePerks = perks.filter(function (perk) {
+
+            return perk.type === gameState.quiz.perkType;
+
+        });
+
+    }
+
+
+    return availablePerks;
+
+}
+
+
+/* ---------- CREATE QUESTION ---------- */
+
+function createQuestion() {
+
+    const availablePerks = getAvailablePerks();
+
+
+    /*
+        Make sure we have enough perks
+        to create five answer choices.
+    */
+
+    if (availablePerks.length < 5) {
+
+        console.error(
+            "Not enough perks available to create a question."
+        );
+
+        return;
+
+    }
+
+
+    /*
+        Shuffle the available perks.
+        The first one becomes the correct answer.
+    */
+
+    const shuffledPerks = shuffleArray(
+        [...availablePerks]
+    );
+
+
+    const correctPerk = shuffledPerks[0];
+
+
+    /*
+        The next four become incorrect answers.
+    */
+
+    const wrongPerks = shuffledPerks.slice(1, 5);
+
+
+    /*
+        Combine the correct answer and
+        incorrect answers.
+    */
+
+    const answerChoices = [
+        correctPerk,
+        ...wrongPerks
+    ];
+
+
+    /*
+        Shuffle the five choices so the
+        correct answer isn't always first.
+    */
+
+    shuffleArray(answerChoices);
+
+
+    /*
+        Store the current question.
+    */
+
+    gameState.quiz.currentPerk = correctPerk;
+
+
+    /*
+        Display everything.
+    */
+
+    displayQuestion(
+        correctPerk,
+        answerChoices
+    );
+
+}
+
+
+/* ---------- DISPLAY QUESTION ---------- */
+
+function displayQuestion(correctPerk, answerChoices) {
+
+    /*
+        Question number
+    */
+
+    questionNumber.textContent =
+        `Question ${gameState.quiz.currentQuestion + 1} / ${gameState.quiz.totalQuestions}`;
+
+
+    /*
+        Clear previous question.
+    */
+
+    questionContent.innerHTML = "";
+    answers.innerHTML = "";
+
+
+    /*
+        Display either the perk logo
+        or the perk description.
+    */
+
+    if (gameState.quiz.guessType === "logo") {
+
+        if (correctPerk.image !== "") {
+
+            const image = document.createElement("img");
+
+            image.src = correctPerk.image;
+            image.alt = "Mystery perk logo";
+
+            image.classList.add("perk-image");
+
+            questionContent.appendChild(image);
+
+        } else {
+
+            const placeholder =
+                document.createElement("div");
+
+            placeholder.textContent =
+                "[ PERK IMAGE GOES HERE ]";
+
+            questionContent.appendChild(placeholder);
+
+        }
+
+    } else {
+
+        const description =
+            document.createElement("p");
+
+        description.textContent =
+            correctPerk.description;
+
+        description.classList.add("question-description");
+
+        questionContent.appendChild(description);
+
+    }
+
+
+    /*
+        Create the five answer buttons.
+    */
+
+    answerChoices.forEach(function (perk) {
+
+        const button =
+            document.createElement("button");
+
+        button.type = "button";
+
+        button.textContent = perk.name;
+
+        button.classList.add("answer-button");
+
+
+        /*
+            Remember which perk this button
+            represents.
+        */
+
+        button.dataset.perkName = perk.name;
+
+
+        /*
+            Check answer when clicked.
+        */
+
+        button.addEventListener("click", function () {
+
+            checkAnswer(
+                button,
+                perk,
+                correctPerk,
+                answerChoices
+            );
+
+        });
+
+
+        answers.appendChild(button);
+
+    });
+
+}
+
+/* =========================================
+   ANSWER CHECKING
+   ========================================= */
+
+function checkAnswer(
+    selectedButton,
+    selectedPerk,
+    correctPerk,
+    answerChoices
+) {
+
+    /*
+        Get every answer button.
+    */
+
+    const buttons =
+        document.querySelectorAll(".answer-button");
+
+
+    /*
+        Prevent the player from answering
+        multiple times.
+    */
+
+    buttons.forEach(function (button) {
+
+        button.disabled = true;
+
+    });
+
+
+    /*
+        Was the answer correct?
+    */
+
+    if (selectedPerk.name === correctPerk.name) {
+
+        selectedButton.classList.add("correct");
+
+        gameState.quiz.score++;
+
+    } else {
+
+        /*
+            Player selected the wrong answer.
+        */
+
+        selectedButton.classList.add("wrong");
+
+
+        /*
+            Find the correct answer and
+            turn it green.
+        */
+
+        buttons.forEach(function (button) {
+
+            if (
+                button.dataset.perkName ===
+                correctPerk.name
+            ) {
+
+                button.classList.add("correct");
+
+            }
+
+        });
+
+    }
+
+
+    /*
+        Blur all answers that aren't
+        the selected answer or correct answer.
+    */
+
+    buttons.forEach(function (button) {
+
+        const isSelected =
+            button === selectedButton;
+
+        const isCorrect =
+            button.dataset.perkName ===
+            correctPerk.name;
+
+
+        if (!isSelected && !isCorrect) {
+
+            button.classList.add("blurred");
+
+        }
+
+    });
+
+
+    /*
+        Show the NEXT button.
+    */
+
+    nextButton.hidden = false;
+
+}
