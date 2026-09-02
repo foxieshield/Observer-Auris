@@ -605,7 +605,7 @@ title.addEventListener("click", function () {
     if (titleClicks >= 4) {
 
         alert(
-            "💜 Made for you with love, sweat, and loots of survivor blood 🫪"
+            "💜 Made for you with Love, Sweat,...and Lots of survivor blood 🫪"
         );
 
         titleClicks = 0;
