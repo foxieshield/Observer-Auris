@@ -1,1 +1,124 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Observer Auris</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main id="app">
+
+        <!-- SETUP SCREEN -->
+        <section id="setupScreen">
+
+            <h1>Observer Auris</h1>
+
+            <p>Test perk knowledge by guessing Logo Or Description!</p>
+
+            <!-- TIMER -->
+            <div class="setting">
+                <h2>Timer</h2>
+
+                <button type="button" id="timerOff">OFF</button>
+                <button type="button" id="timerOn">ON</button>
+            </div>
+
+            <!-- TIME PER QUESTION -->
+            <div class="setting" id="timeSetting">
+
+                <h2>Time per question</h2>
+
+                <select id="timeSelect">
+                    <option value="5">5 seconds</option>
+                    <option value="10" selected>10 seconds</option>
+                    <option value="15">15 seconds</option>
+                    <option value="20">20 seconds</option>
+                    <option value="30">30 seconds</option>
+                </select>
+
+            </div>
+
+            <!-- GUESS TYPE -->
+            <div class="setting">
+
+                <h2>Guess</h2>
+
+                <button type="button" id="logoMode">
+                    Perk Logo
+                </button>
+
+                <button type="button" id="descriptionMode">
+                    Perk Description
+                </button>
+
+            </div>
+
+            <!-- NUMBER OF QUESTIONS -->
+            <div class="setting">
+
+                <h2>Number of questions</h2>
+
+                <select id="questionCount">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+
+            </div>
+
+            <!-- START -->
+            <button type="button" id="startButton">
+                START
+            </button>
+
+        </section>
+
+
+        <!-- GAME SCREEN -->
+        <section id="gameScreen" hidden>
+
+            <h1>Observer Auris</h1>
+
+            <p id="questionNumber"></p>
+
+            <div id="timerDisplay"></div>
+
+            <div id="questionContent"></div>
+
+            <div id="answers"></div>
+
+            <button type="button" id="nextButton" hidden>
+                NEXT QUESTION
+            </button>
+
+        </section>
+
+
+        <!-- RESULTS SCREEN -->
+        <section id="resultsScreen" hidden>
+
+            <h1>Quiz Complete</h1>
+
+            <div id="finalScore"></div>
+
+            <button type="button" id="restartButton">
+                PLAY AGAIN
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
+```
 
