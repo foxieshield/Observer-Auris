@@ -296,7 +296,7 @@ const perks = [
     },
 
     {
-        name: "Blood Echo,
+        name: "Blood Echo",
         type: "killer",
         description: `
      Whenever you hook a survivor, for 30s, all injured survivors:
