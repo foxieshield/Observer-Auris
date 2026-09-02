@@ -68,7 +68,7 @@ const perks = [
         type: "survivor",
         description: "TEST DESCRIPTION",
         image: ""
-    }
+    },
 
     {
         name: "Hex: Ruin",
