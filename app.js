@@ -154,3 +154,4 @@ startButton.addEventListener("click", function () {
     console.log(gameState);
 
 });
+
