@@ -48,14 +48,14 @@ const perks = [
         name: "Alert",
         type: "survivor",
         description: `
-        Whenever the killer breaks a pallet or beakable, or damages a generator: 
+        Whenever the killer breaks a pallet or breakable, or damages a generator: 
         •you hear a sound cue. you see their aura for 5s
         `,
         image: ""
     },
 
     {
-        name: "Any Means Necesary",
+        name: "Any Means Necessary",
         type: "survivor",
         description: `
         While next to a Dropped Pallet, use 'A', 'circle' or 'left Click' for 3s to reset it. 
@@ -117,7 +117,7 @@ const perks = [
     },
 
  {
-        name: "Background Playere",
+        name: "Background Player",
         type: "survivor",
         description: `
        whenever the killer Picks-up another survivor, for
@@ -143,7 +143,7 @@ const perks = [
     },
 
  {
-        name: "Balanced landing",
+        name: "Balanced Landing",
         type: "survivor",
         description: `
      Whenever you fall from atleast 1.25m:
@@ -156,7 +156,7 @@ const perks = [
     },
 
       {
-        name: "Bardic inspiration",
+        name: "Bardic Inspiration",
         type: "survivor",
         description: `
         While idle, use "A", "circle" or "Left click" to perform,
@@ -318,7 +318,7 @@ const perks = [
         image: ""
     },
     {
-        name: "BloodHound",
+        name: "Bloodhound",
         type: "killer",
         description: `
       Pools of blood are brighter and last 4s longer
