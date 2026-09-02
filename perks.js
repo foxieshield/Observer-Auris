@@ -7,7 +7,7 @@ const perks = [
         while healing another survivor, both gain elusive. 
         whenever you finish healing the Obsession, you both gain elusive for 30s.
         `,
-        image: ""
+        image: "assets/aplaceforus.jpg"
     },
 
     {
@@ -18,7 +18,7 @@ const perks = [
         •a Visceral or lower rarity add-on.
         •100% chance for uncommon or lower rarity add-on.
         `,
-        image: ""
+        image: "assets/aceinthehole.png"
     },
 
     {
@@ -30,7 +30,7 @@ const perks = [
         •Gain 50% haste for 4s 
         •gain exhausted for 40s
         `,
-        image: ""
+        image: "assets/adrenaline.png"
     },
 
     {
@@ -41,7 +41,7 @@ const perks = [
         •you unhook them or they unhook you. You finish healing them, or they finish healing you. 
         this effect lasts until unhooked
         `,
-        image: ""
+        image: "assets/aftercare.png"
     },
 
     {
@@ -51,7 +51,7 @@ const perks = [
         Whenever the killer breaks a pallet or breakable, or damages a generator: 
         •you hear a sound cue. you see their aura for 5s
         `,
-        image: ""
+        image: "assets/alert.png"
     },
 
     {
@@ -61,7 +61,7 @@ const perks = [
         While next to a Dropped Pallet, use 'A', 'circle' or 'left Click' for 3s to reset it. 
         you see the aura of dropped pallets
         `,
-        image: ""
+        image: "assets/anymeansnecesary.png"
     },
 
     {
@@ -72,7 +72,7 @@ const perks = [
         use 'A', 'circle' or 'left Click'for 3s to create fragile pallet. 
         within 32m, you see the aura of broken pallets
         `,
-        image: ""
+        image: "assets/apocalypticingenuity.jpg"
     },
 
     {
@@ -83,7 +83,7 @@ const perks = [
         spend 1 token to rummage an empty chest up to 2 times per chest. 
         rummage 80% faster
         `,
-        image: ""
+        image: "assets/appraisal.png"
     },
 
    {
@@ -101,7 +101,7 @@ const perks = [
           • You cannot get great basic skill checks.
           `,
 
-    image: ""
+    image: "assets/autodidact.png"
 },
     {
         name: "Babysitter",
@@ -113,7 +113,7 @@ const perks = [
         •they leave no scratch marks for 30s
         •You see the killers aura for 8s
         `,
-        image: ""
+        image: "assets/babysitter.png"
     },
 
  {
@@ -125,7 +125,7 @@ const perks = [
         •gain 50% haste for 5s
         •gain exhausted for 20 S
         `,
-        image: ""
+        image: "assets/backgroundplayer.jpg"
     },
 
   {
@@ -139,7 +139,7 @@ const perks = [
       when the killer vaults that window, the trap
       explodes and they gain 50% hindered for 6s
         `,
-        image: ""
+        image: "assets/badabadaboom.jpg"
     },
 
  {
@@ -152,7 +152,7 @@ const perks = [
         •Your stagger is 75% shorter
         •Your grunts from falling are 100% quieter
         `,
-        image: ""
+        image: "assets/balancedlanding.jpg"
     },
 
       {
@@ -170,7 +170,7 @@ const perks = [
 
         If you complete the performance, this effect ends after 90s. Cooldown: 90S
         `,
-        image: ""
+        image: "assets/bardicinspiration.jpg"
     },
 
  {
@@ -183,7 +183,7 @@ const perks = [
         •They heal 16% faster
         •They unlock chest 16% faster
         `,
-        image: ""
+        image: "assets/betterthannew.jpg"
     },
 
 {
@@ -195,7 +195,7 @@ const perks = [
         •whenever the killer downs a survivor, you see
         the auras of all survivor for 30s
         `,
-        image: ""
+        image: "assets/bettertogether.jpg"
     },
 
      {
@@ -209,7 +209,7 @@ const perks = [
         •You loose only 1% progress
         •The killer is not alerted
         `,
-        image: ""
+        image: "assets/bitethebullet.jpg"
     },
 
      {
@@ -225,7 +225,7 @@ const perks = [
         •They are stunned for 4ss
         •Everyone nearvy looking at the detonation is blinded
         `,
-        image: ""
+        image: "assets/blastmine.webp"
     },
 
      {
@@ -240,7 +240,7 @@ while you are not the obsession:
 
   when trial starts, you are less likely to be the obession
         `,
-        image: ""
+        image: "assets/bloodpact.jpg"
     },
 
   {
@@ -253,7 +253,7 @@ while you are not the obsession:
 
         This is disabled by conspicuous actions
         `,
-        image: ""
+        image: "assets/bloodrush.jpg"
     },
      
       //---------killer perks
