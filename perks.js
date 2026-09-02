@@ -242,6 +242,19 @@ while you are not the obsession:
         `,
         image: ""
     },
+
+  {
+        name: "Blood Rush",
+        type: "survivor",
+        description: `
+        Until all generators are completed, whenever you are 
+        unhooked, for the next 60s, while exhausted use 
+        "A", "circle" or "Left Click" to lose ehausted instantly
+
+        This is disabled by conspicuous actions
+        `,
+        image: ""
+    },
      
       //---------killer perks
     {
