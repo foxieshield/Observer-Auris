@@ -115,6 +115,77 @@ const perks = [
         `,
         image: ""
     },
+
+ {
+        name: "Background Playere",
+        type: "survivor",
+        description: `
+       whenever the killer Picks-up another survivor, for
+       then next 10s, when you start running: 
+        •gain 50% haste for 5s
+        •gain exhausted for 20 S
+        `,
+        image: ""
+    },
+
+  {
+        name: "Bada Bada Boom",
+        type: "survivor",
+        description: `
+      After repairing 20% of generators, while next to a 
+      window, use ability button to trap it for 60s. all survivors see
+      that windows's aura for that time
+
+      when the killer vaults that window, the trap
+      explodes and they gain 50% hindered for 6s
+        `,
+        image: ""
+    },
+
+ {
+        name: "Balanced landing",
+        type: "survivor",
+        description: `
+     Whenever you fall from atleast 1.25m:
+        •Gain 50% haste for 3s 
+        •gain exhausted for 40s
+        •Your stagger is 75% shorter
+        •Your grunts from falling are 100% quieter
+        `,
+        image: ""
+    },
+
+      {
+        name: "Bardic inspiration",
+        type: "survivor",
+        description: `
+        While idle, use "A", "circle" or "Left click" to perform,
+        empowering all survivors within 16m for up to 15s. 
+        while you are performing, other survivors will see your aura
+        roll a D 20:
+        •1| You scream, nothing happens
+        •2-10| basic skill check give 1% progress
+        •11-19| Basic skill checks give 2% progress
+        •20| Basic skill checks give 3% progress
+
+        If you complete the performance, this effect ends after 90s. Cooldown: 90S
+        `,
+        image: ""
+    },
+
+ {
+        name: "Better Than New",
+        type: "survivor",
+        description: `
+       Whenever you finish healing another survivor, 
+       until they take damage:
+        •They B;ess and cleanse totems 16% faster
+        •They heal 16% faster
+        •They unlock chest 16% faster
+        `,
+        image: ""
+    },
+     
       //---------killer perks
     {
         name: "A Nurse's Calling",
