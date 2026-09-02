@@ -167,6 +167,116 @@ const perks = [
         you see the auras of other survivors
         `,
         image: ""
-    }
-  
+    },
+     
+    {
+        name: "Bamboozle",
+        type: "killer",
+        description: `
+       Whenever you vault a Window, it is blocked for survivors for 16s
+       You Basic-vault Windows 15% faster
+       Only 1 window can be blocked at a time
+        `,
+        image: ""
+    },
+
+     
+    {
+        name: "Barbecue & Chili",
+        type: "killer",
+        description: `
+       Whenever you hook a survivor, for 5s, you see the 
+       auras of all Survivors who are atleast 40m away 
+       from the hooked survivor
+        `,
+        image: ""
+    },
+     
+    {
+        name: "Batteries Included",
+        type: "killer",
+        description: `
+     Within 16m of a completed generator, you gain 5% haste.
+     when you leave the range, this ends after 5s
+        `,
+        image: ""
+    },
+
+         {
+        name: "Beast of Prey",
+        type: "killer",
+        description: `
+     Whenever you gain blood lust, gain undetectable for 40s
+        `,
+        image: ""
+    },
+
+         {
+        name: "Bitter Murmur",
+        type: "killer",
+        description: `
+      Whenever a generator is completed, you see the 
+      auras of all survivors within 16m of it for 5s
+
+      When all generators are completed, you see the auras
+      of all the survivors for 10s
+        `,
+        image: ""
+    },
+
+    {
+        name: "Blood Echo,
+        type: "killer",
+        description: `
+     Whenever you hook a survivor, for 30s, all injured survivors:
+      •gain exhausted
+      •gain Hemorrhage
+        `,
+        image: ""
+    },
+
+    {
+        name: "Blood Warden",
+        type: "killer",
+        description: `
+     When an exit gate is opened, once per trial, when
+     you hook a survivor, both exits are blocked for 60s.
+
+     you see the aura of survivors within exit thresholds
+        `,
+        image: ""
+    },
+    {
+        name: "BloodHound",
+        type: "killer",
+        description: `
+      Pools of blood are brighter and last 4s longer
+        `,
+        image: ""
+    },
+    {
+        name: "Brutal Strength",
+        type: "killer",
+        description: `
+     You basic-break pallets and breakable walls, and damage generators 20% faster
+        `,
+        image: ""
+    },
+    {
+        name: "Call Of Brine",
+        type: "killer",
+        description: `
+     Whenever you damage a generator, it regresses
+     50% faster for 90s
+
+     For that time, whenever a survivor hits a good basic 
+     skill check while repairing that generator, you are alerted
+        `,
+        image: ""
+    },
+
+
+
+
+     
 ];
