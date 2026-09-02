@@ -543,8 +543,35 @@ function showResults() {
     // Display score
     finalScore.textContent =
         `${gameState.quiz.score} / ${gameState.quiz.totalQuestions}`;
-
+   
+//makes play again work
+   
 }
+
+restartButton.addEventListener("click", function () {
+    gameState.quiz.currentQuestion = 0;
+    gameState.quiz.score = 0;
+    gameState.quiz.usedPerks = [];
+
+    resultsScreen.hidden = true;
+    gameScreen.hidden = false;
+
+    createQuestion();
+});
+
+//leave match
+
+leaveButton.addEventListener("click", function () {
+    gameScreen.hidden = true;
+    resultsScreen.hidden = true;
+    setupScreen.hidden = false;
+
+    gameState.quiz.currentQuestion = 0;
+    gameState.quiz.score = 0;
+    gameState.quiz.usedPerks = [];
+
+    nextButton.hidden = true;
+});
 
 /* =========================================
    EASTER EGG
