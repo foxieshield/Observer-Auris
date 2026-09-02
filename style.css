@@ -167,12 +167,7 @@ select {
     margin-bottom: 30px;
 
     /*
-        Animation foundation.
-
-        Later JavaScript can add:
-        .question-enter
-        .question-visible
-        .question-leave
+        Animation foundation.     
     */
 }
 
@@ -193,8 +188,10 @@ select {
 .question-description {
     white-space: pre-line;
     line-height: 1.6;
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
+    font-size: 1.15rem;
+    font-weight: bold;
 }
 
 /* ---------- PERK IMAGE ---------- */
