@@ -179,9 +179,66 @@ const perks = [
         description: `
        Whenever you finish healing another survivor, 
        until they take damage:
-        •They B;ess and cleanse totems 16% faster
+        •They Bless and cleanse totems 16% faster
         •They heal 16% faster
         •They unlock chest 16% faster
+        `,
+        image: ""
+    },
+
+{
+        name: "Better Together",
+        type: "survivor",
+        description: `
+       While you are repairing a generator:
+        •Other survivors see that generators aura
+        •whenever the killer downs a survivor, you see
+        the auras of all survivor for 30s
+        `,
+        image: ""
+    },
+
+     {
+        name: "Bite The Bullet",
+        type: "survivor",
+        description: `
+     While healing, you and the healed survivor make no
+     noises, or grunts of pain. whenever you miss a
+     bassic skill check:
+     
+        •You loose only 1% progress
+        •The killer is not alerted
+        `,
+        image: ""
+    },
+
+     {
+        name: "Blast Mine",
+        type: "survivor",
+        description: `
+      After repairing 40% of generratos, while next to a
+      generator, use interact button to trap it for 120s. all survivors
+      see that generator's aura for that time
+
+      when the killer damages that generator, the trap 
+      explodes, then:
+        •They are stunned for 4ss
+        •Everyone nearvy looking at the detonation is blinded
+        `,
+        image: ""
+    },
+
+     {
+        name: "Blood Pact",
+        type: "survivor",
+        description: `
+while you are not the obsession:
+ •while you or the obsession are injured, you see eachother's auras
+  •whenever you finish healing the obsession, or 
+  they finish healing you, while within 16m of each
+  other, you both gain 7% haste
+
+  when trial starts, you are less likely to be the obession
         `,
         image: ""
     },
