@@ -44,6 +44,8 @@ const restartButton = document.getElementById("restartButton");
 const finalScore = document.getElementById("finalScore");
 
 let timerInterval;
+let perkLogoClicks = 0;
+let perkLogoClickTimer;
 /*  GAME STATE */
 
 const gameState = {
@@ -307,32 +309,51 @@ function displayQuestion(correctPerk, answerChoices) {
         Display either the perk logo
         or the perk description.
     */
+if (gameState.quiz.guessType === "logo") {
 
-    if (gameState.quiz.guessType === "logo") {
+    if (correctPerk.image !== "") {
 
-        if (correctPerk.image !== "") {
+        const image = document.createElement("img");
 
-            const image = document.createElement("img");
+        image.src = correctPerk.image;
+        image.alt = "Mystery perk logo";
+        image.classList.add("perk-image");
 
-            image.src = correctPerk.image;
-            image.alt = "Mystery perk logo";
+        image.addEventListener("click", function () {
 
-            image.classList.add("perk-image");
+            if (correctPerk.name !== "A Place For Us") {
+                return;
+            }
 
-            questionContent.appendChild(image);
+            perkLogoClicks++;
 
-        } else {
+            clearTimeout(perkLogoClickTimer);
 
-            const placeholder =
-                document.createElement("div");
+            perkLogoClickTimer = setTimeout(function () {
+                perkLogoClicks = 0;
+            }, 1000);
 
-            placeholder.textContent =
-                "[ PERK IMAGE GOES HERE ]";
+            if (perkLogoClicks >= 4) {
 
-            questionContent.appendChild(placeholder);
+                alert("ITS US, ITS US, ITS US");
 
-        }
+                perkLogoClicks = 0;
+            }
+        });
 
+        questionContent.appendChild(image);
+
+    } else {
+
+        const placeholder =
+            document.createElement("div");
+
+        placeholder.textContent =
+            "[ PERK IMAGE GOES HERE ]";
+
+        questionContent.appendChild(placeholder);
+    }
+}
     } else {
 
         const description =
