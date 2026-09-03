@@ -166,6 +166,20 @@ ctx.stroke();
     ctx.stroke();
 }
 
+// SOUND DELAY //
+
+function scheduleSkillCheck() {
+    const randomDelay = Math.random() * 2000 + 1000;
+
+    setTimeout(function () {
+        skillCheckSound.currentTime = 0;
+        skillCheckSound.play();
+
+        setTimeout(function () {
+            createSkillCheck();
+        }, 600);
+    }, randomDelay);
+}
 /*Creaste SKillcheck */
 
 function createSkillCheck() {
@@ -1010,8 +1024,7 @@ leaveButton.addEventListener("click", function () {
 });
 
 //test skill check //
-
-createSkillCheck();
+scheduleSkillCheck();
 
 /* =========================================
    EASTER EGG
