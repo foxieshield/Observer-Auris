@@ -483,7 +483,14 @@ select {
     cursor: pointer;
 }
 
+#skillCheckLeave:hover {
+    color: #eee;
+    border-color: #777;
+    background-color: #222;
+}
+
 @media (max-width: 500px) {
+
     #skillCheckArea {
         width: 320px;
         height: 320px;
