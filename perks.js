@@ -393,7 +393,7 @@ while you are not the obsession:
         description: `
       Pools of blood are brighter and last 4s longer
         `,
-        image: ""
+        image: "assets/bloodhound.webp"
     },
     {
         name: "Brutal Strength",
