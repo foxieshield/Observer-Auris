@@ -657,32 +657,6 @@ leaveButton.addEventListener("click", function () {
     nextButton.hidden = true;
 });
 
-/* skillcheck work */
-
-<!-- SKILL CHECK SCREEN -->
-<section id="skillCheckScreen" hidden>
-    <h1>Skill Check</h1>
-
-    <div id="skillCheckStats">
-        <span id="skillCheckCorrect">Correct: 0</span>
-        <span id="skillCheckWrong">Missed: 0</span>
-    </div>
-
-    <div id="skillCheckArea">
-        <canvas id="skillCheckCanvas" width="400" height="400"></canvas>
-
-        <button type="button" id="skillCheckButton">
-            SPACE
-        </button>
-    </div>
-
-    <div id="reactionDisplay"></div>
-
-    <button type="button" id="skillCheckLeave">
-        LEAVE
-    </button>
-</section>
-
 /* =========================================
    EASTER EGG
    ========================================= */
