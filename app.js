@@ -64,6 +64,164 @@ const skillCheckContext = skillCheckCanvas.getContext("2d");
 let timerInterval;
 let perkLogoClicks = 0;
 let perkLogoClickTimer;
+
+function drawSkillCheck() {
+
+    const ctx = skillCheckContext;
+
+    const width = skillCheckCanvas.width;
+    const height = skillCheckCanvas.height;
+
+    const centerX = width / 2;
+    const centerY = height / 2;
+
+    const radius = 155;
+
+    ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+    // OUTER CIRCLE
+
+    ctx.beginPath();
+
+    ctx.arc(
+        centerX,
+        centerY,
+        radius,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.strokeStyle = "#eeeeee";
+    ctx.lineWidth = 5;
+
+    ctx.stroke();
+
+
+    // SUCCESS ZONE
+
+    ctx.beginPath();
+
+    ctx.arc(
+        centerX,
+        centerY,
+        radius,
+        gameState.skillCheck.successStart,
+        gameState.skillCheck.successEnd
+    );
+
+    ctx.strokeStyle = "#eeeeee";
+    ctx.lineWidth = 14;
+
+    ctx.stroke();
+
+
+    // NEEDLE
+
+    const angle =
+        gameState.skillCheck.needleAngle;
+
+    const needleLength = radius + 20;
+
+    const needleX =
+        centerX +
+        Math.cos(angle) * needleLength;
+
+    const needleY =
+        centerY +
+        Math.sin(angle) * needleLength;
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        centerX,
+        centerY
+    );
+
+    ctx.lineTo(
+        needleX,
+        needleY
+    );
+
+    ctx.strokeStyle = "#d33";
+    ctx.lineWidth = 8;
+    ctx.lineCap = "round";
+
+    ctx.stroke();
+}
+
+/*Creaste SKillcheck */
+
+function createSkillCheck() {
+
+    // Activate the skill check
+    gameState.skillCheck.active = true;
+
+    // Pick a random location for the success zone
+    const successCenter =
+        Math.random() * Math.PI * 2;
+
+    // Size of the success zone
+    const successSize =
+        Math.PI * 0.25;
+
+    gameState.skillCheck.successStart =
+        successCenter - successSize / 2;
+
+    gameState.skillCheck.successEnd =
+        successCenter + successSize / 2;
+
+    // Random starting position for the needle
+    gameState.skillCheck.needleAngle =
+        Math.random() * Math.PI * 2;
+
+    // How fast the needle rotates
+    gameState.skillCheck.needleSpeed =
+        0.045;
+
+    // Record when the skill check appeared
+    gameState.skillCheck.shownAt =
+        performance.now();
+
+    // Clear previous reaction message
+    reactionDisplay.textContent = "";
+
+    // Draw the circle
+    drawSkillCheck();
+
+    // Start animation
+    cancelAnimationFrame(
+        gameState.skillCheck.animationFrame
+    );
+
+    animateSkillCheck();
+}
+
+//animation function//
+
+function animateSkillCheck() {
+
+    // Stop if there is no active skill check
+    if (!gameState.skillCheck.active) {
+        return;
+    }
+
+    // Move the needle
+    gameState.skillCheck.needleAngle +=
+        gameState.skillCheck.needleSpeed;
+
+    // Redraw everything
+    drawSkillCheck();
+
+    // Continue animation
+    gameState.skillCheck.animationFrame =
+        requestAnimationFrame(animateSkillCheck);
+}
+
 /*  GAME STATE */
 
 const gameState = {
@@ -81,11 +239,23 @@ const gameState = {
     usedPerks: []
 },
 
-    skillCheck: {
-        mode: "normal",
-        correct: 0,
-        wrong: 0
-    }
+ skillCheck: {
+    mode: "normal",
+    correct: 0,
+    wrong: 0,
+
+    active: false,
+
+    animationFrame: null,
+
+    needleAngle: 0,
+    needleSpeed: 0,
+
+    successStart: 0,
+    successEnd: 0,
+
+    shownAt: 0
+}
 
 };
 
@@ -656,6 +826,10 @@ leaveButton.addEventListener("click", function () {
 
     nextButton.hidden = true;
 });
+
+//test skill check //
+
+createSkillCheck();
 
 /* =========================================
    EASTER EGG
