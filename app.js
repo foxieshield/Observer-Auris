@@ -229,8 +229,7 @@ function animateSkillCheck() {
     }
 
     // Move the needle
-    gameState.skillCheck.needleAngle +=
-        gameState.skillCheck.needleSpeed;
+    gameState.skillCheck.needleAngle += gameState.skillCheck.needleSpeed;
 
     // Redraw everything
     drawSkillCheck();
@@ -238,6 +237,172 @@ function animateSkillCheck() {
     // Continue animation
     gameState.skillCheck.animationFrame = requestAnimationFrame(animateSkillCheck);
 }
+
+//function attempt skillcheck //
+
+function attemptSkillCheck() {
+
+    // Don't allow another input after the check is finished
+    if (!gameState.skillCheck.active) {
+        return;
+    }
+
+    // Stop the needle
+    gameState.skillCheck.active = false;
+
+    cancelAnimationFrame(
+        gameState.skillCheck.animationFrame
+    );
+
+    // Calculate reaction time
+    const reactionTime =
+        performance.now() -
+        gameState.skillCheck.shownAt;
+
+    // Get the current needle angle
+    const angle =
+        normalizeAngle(
+            gameState.skillCheck.needleAngle
+        );
+
+    // Get the GOOD zone
+    const goodStart =
+        normalizeAngle(
+            gameState.skillCheck.goodStart
+        );
+
+    const goodEnd =
+        normalizeAngle(
+            gameState.skillCheck.goodEnd
+        );
+
+    // Get the GREAT zone
+    const greatStart =
+        normalizeAngle(
+            gameState.skillCheck.greatStart
+        );
+
+    const greatEnd =
+        normalizeAngle(
+            gameState.skillCheck.greatEnd
+        );
+
+    // Check GREAT first
+    const isGreat =
+        isAngleInsideRange(
+            angle,
+            greatStart,
+            greatEnd
+        );
+
+    // Then check GOOD
+    const isGood =
+        isAngleInsideRange(
+            angle,
+            goodStart,
+            goodEnd
+        );
+
+
+    if (isGreat) {
+
+        gameState.skillCheck.correct++;
+
+        reactionDisplay.textContent =
+            `GREAT! — ${Math.round(reactionTime)} ms`;
+
+    } else if (isGood) {
+
+        gameState.skillCheck.correct++;
+
+        reactionDisplay.textContent =
+            `GOOD — ${Math.round(reactionTime)} ms`;
+
+    } else {
+
+        gameState.skillCheck.wrong++;
+
+        reactionDisplay.textContent =
+            `MISS — ${Math.round(reactionTime)} ms`;
+    }
+
+
+    updateSkillCheckStats();
+}
+
+// CUSTOM ANGLE //
+function normalizeAngle(angle) {
+
+    const fullCircle =
+        Math.PI * 2;
+
+    angle =
+        angle % fullCircle;
+
+    if (angle < 0) {
+        angle += fullCircle;
+    }
+
+    return angle;
+}
+
+// INSIDE THE RANGE //
+function isAngleInsideRange(
+    angle,
+    start,
+    end
+) {
+
+    if (start <= end) {
+
+        return (
+            angle >= start &&
+            angle <= end
+        );
+    }
+
+    // Handles a zone crossing 0°
+    return (
+        angle >= start ||
+        angle <= end
+    );
+}
+
+ // STATS UPDATE //
+function updateSkillCheckStats() {
+
+    skillCheckCorrect.textContent =
+        `Correct: ${gameState.skillCheck.correct}`;
+
+    skillCheckWrong.textContent =
+        `Missed: ${gameState.skillCheck.wrong}`;
+}
+
+skillCheckButton.addEventListener(
+    "click",
+    function () {
+
+        attemptSkillCheck();
+
+    }
+);
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.code === "Space" &&
+            !event.repeat &&
+            !skillCheckScreen.hidden
+        ) {
+
+            event.preventDefault();
+
+            attemptSkillCheck();
+        }
+    }
+);
 
 /*  GAME STATE */
 
