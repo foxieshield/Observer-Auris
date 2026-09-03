@@ -118,27 +118,25 @@ ctx.lineWidth = 14;
 
 ctx.stroke();
 
+
 // GREAT ZONE
+const greatSize = Math.PI * 0.10;
 
 ctx.beginPath();
-
 ctx.arc(
     centerX,
     centerY,
     radius,
-    gameState.skillCheck.greatStart,
-    gameState.skillCheck.greatEnd
+    gameState.skillCheck.goodStart,
+    gameState.skillCheck.goodStart + greatSize
 );
-
 ctx.strokeStyle = "#111111";
 ctx.lineWidth = 14;
-
 ctx.stroke();
-
+   
     // NEEDLE
 
-    const angle =
-        gameState.skillCheck.needleAngle;
+    const angle = gameState.skillCheck.needleAngle;
 
     const needleLength = radius + 20;
 
