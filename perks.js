@@ -264,7 +264,7 @@ while you are not the obsession:
         Within 32m of survivors who are healing or being healed, 
         see their auras
         `,
-        image: ""
+        image: "assets/anursescalling.webp"
     },
 
     {
@@ -275,7 +275,7 @@ while you are not the obsession:
         •You gain 18% haste
         •Your terror radius is 12m larger
         `,
-        image: ""
+        image: "assets/agitation.webp"
     },
 
     {
@@ -286,7 +286,7 @@ while you are not the obsession:
         •gains Oblivious for 60s
         •You see their aura for 8s
      `,
-        image: ""
+        image: "assets/alieninstinct.webp"
     },
 
     {
@@ -297,7 +297,7 @@ while you are not the obsession:
         your lunge attacks are 75% longer for 25s. 
         cooldown:5s
         `,
-        image: ""
+        image: "assets/allshakingthunder.webp"
     },
 
     {
@@ -307,7 +307,7 @@ while you are not the obsession:
         While carrying a survivor, within 20m of you,
         you see the auras of other survivors
         `,
-        image: ""
+        image: "assets/awakenedawareness.webp"
     },
      
     {
@@ -318,7 +318,7 @@ while you are not the obsession:
        You Basic-vault Windows 15% faster
        Only 1 window can be blocked at a time
         `,
-        image: ""
+        image: "assets/bamboozle.webp"
     },
 
      
@@ -330,7 +330,7 @@ while you are not the obsession:
        auras of all Survivors who are atleast 40m away 
        from the hooked survivor
         `,
-        image: ""
+        image: "assets/barbecue.webp"
     },
      
     {
@@ -340,7 +340,7 @@ while you are not the obsession:
      Within 16m of a completed generator, you gain 5% haste.
      when you leave the range, this ends after 5s
         `,
-        image: ""
+        image: "assets/batteriesincluded.webp"
     },
 
          {
@@ -349,7 +349,7 @@ while you are not the obsession:
         description: `
      Whenever you gain blood lust, gain undetectable for 40s
         `,
-        image: ""
+        image: "assets/beastsofprey.webp"
     },
 
          {
@@ -362,7 +362,7 @@ while you are not the obsession:
       When all generators are completed, you see the auras
       of all the survivors for 10s
         `,
-        image: ""
+        image: "assets/bittermurmur.webp"
     },
 
     {
@@ -373,7 +373,7 @@ while you are not the obsession:
       •gain exhausted
       •gain Hemorrhage
         `,
-        image: ""
+        image: "assets/bloodecho.webp"
     },
 
     {
@@ -385,7 +385,7 @@ while you are not the obsession:
 
      you see the aura of survivors within exit thresholds
         `,
-        image: ""
+        image: "assets/bloodwarden.webp"
     },
     {
         name: "Bloodhound",
@@ -401,7 +401,7 @@ while you are not the obsession:
         description: `
      You basic-break pallets and breakable walls, and damage generators 20% faster
         `,
-        image: ""
+        image: "assets/brutalstrength.webp"
     },
     {
         name: "Call Of Brine",
@@ -413,7 +413,7 @@ while you are not the obsession:
      For that time, whenever a survivor hits a good basic 
      skill check while repairing that generator, you are alerted
         `,
-        image: ""
+        image: "assets/callofbrine.webp"
     },
 
 {
@@ -424,7 +424,7 @@ while you are not the obsession:
         from you, you see their aura for 3s. otherwise, the
         farthest survivor becomes the obsession
         `,
-        image: ""
+        image: "assets/celestialwitness.webp"
     },
 
 {
@@ -434,7 +434,7 @@ while you are not the obsession:
     When the trial starts, the 3 farthest generators
     from you are blocked for 120s, or until you down a Survivor
         `,
-        image: ""
+        image: "assets/corruptintervention.webp"
     },
 
 {
@@ -446,7 +446,7 @@ while you are not the obsession:
       •While healing, basic skill 
       checks spin 50% faster
         `,
-        image: ""
+        image: "assets/coulrophobia.webp"
     },
 
 {
@@ -460,7 +460,7 @@ while you are not the obsession:
      whenever you lounge-attack, spend 1 token to make
      it 80% longer
         `,
-        image: ""
+        image: "assets/coupdegrace.webp"
     },
 
 {
@@ -471,7 +471,7 @@ while you are not the obsession:
      •You see the auras of all windows for 30s
       •All windows are blocked for survivors for 30s
         `,
-        image: ""
+        image: "assets/cruellimits.webp"
     },
 
 
