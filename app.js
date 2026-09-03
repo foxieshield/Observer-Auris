@@ -45,6 +45,22 @@ const finalScore = document.getElementById("finalScore");
 
 const skillCheckSound = new Audio("audio/skillcheck.mp3");
 
+const skillCheckScreen = document.getElementById("skillCheckScreen");
+
+const skillCheckCanvas = document.getElementById("skillCheckCanvas");
+
+const skillCheckButton = document.getElementById("skillCheckButton");
+
+const skillCheckCorrect = document.getElementById("skillCheckCorrect");
+
+const skillCheckWrong = document.getElementById("skillCheckWrong");
+
+const reactionDisplay = document.getElementById("reactionDisplay");
+
+const skillCheckLeave = document.getElementById("skillCheckLeave");
+
+const skillCheckContext = skillCheckCanvas.getContext("2d");
+
 let timerInterval;
 let perkLogoClicks = 0;
 let perkLogoClickTimer;
