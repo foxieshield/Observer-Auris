@@ -437,24 +437,17 @@ select {
 
 #skillCheckButton {
     display: block;
-
-    width: 220px;
-    height: 60px;
-
+    width: 280px;
+    height: 70px;
     margin: 15px auto 0;
-
     border: 2px solid #eee;
     border-radius: 8px;
-
     background-color: #050505;
     color: #eee;
-
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
-
     cursor: pointer;
 }
-
 #skillCheckButton:active {
     transform: scale(0.97);
 }
