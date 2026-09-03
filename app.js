@@ -103,8 +103,8 @@ function drawSkillCheck() {
 
 // GOOD ZONE
 
+// GOOD ZONE
 ctx.beginPath();
-
 ctx.arc(
     centerX,
     centerY,
@@ -112,10 +112,8 @@ ctx.arc(
     gameState.skillCheck.goodStart,
     gameState.skillCheck.goodEnd
 );
-
-ctx.strokeStyle = "#eeeeee";
+ctx.strokeStyle = "#111111";
 ctx.lineWidth = 14;
-
 ctx.stroke();
 
 // GREAT ZONE
@@ -129,7 +127,7 @@ ctx.arc(
     gameState.skillCheck.goodStart,
     gameState.skillCheck.goodStart + greatSize
 );
-ctx.strokeStyle = "#111111";
+ctx.strokeStyle = "#eeeeee";
 ctx.lineWidth = 14;
 ctx.stroke();
    
