@@ -101,24 +101,39 @@ function drawSkillCheck() {
 
     ctx.stroke();
 
+// GOOD ZONE
 
-    // SUCCESS ZONE
+ctx.beginPath();
 
-    ctx.beginPath();
+ctx.arc(
+    centerX,
+    centerY,
+    radius,
+    gameState.skillCheck.goodStart,
+    gameState.skillCheck.goodEnd
+);
 
-    ctx.arc(
-        centerX,
-        centerY,
-        radius,
-        gameState.skillCheck.successStart,
-        gameState.skillCheck.successEnd
-    );
+ctx.strokeStyle = "#eeeeee";
+ctx.lineWidth = 14;
 
-    ctx.strokeStyle = "#eeeeee";
-    ctx.lineWidth = 14;
+ctx.stroke();
 
-    ctx.stroke();
+// GREAT ZONE
 
+ctx.beginPath();
+
+ctx.arc(
+    centerX,
+    centerY,
+    radius,
+    gameState.skillCheck.greatStart,
+    gameState.skillCheck.greatEnd
+);
+
+ctx.strokeStyle = "#111111";
+ctx.lineWidth = 14;
+
+ctx.stroke();
 
     // NEEDLE
 
@@ -161,31 +176,34 @@ function createSkillCheck() {
     // Activate the skill check
     gameState.skillCheck.active = true;
 
-    // Pick a random location for the success zone
-    const successCenter =
-        Math.random() * Math.PI * 2;
+  // Random location for the center of the scoring area
 
-    // Size of the success zone
-    const successSize =
-        Math.PI * 0.25;
+const scoringCenter = Math.random() * Math.PI * 2;
 
-    gameState.skillCheck.successStart =
-        successCenter - successSize / 2;
+// GOOD zone
 
-    gameState.skillCheck.successEnd =
-        successCenter + successSize / 2;
+const goodSize = Math.PI * 0.30;
+
+gameState.skillCheck.goodStart = scoringCenter - goodSize / 2;
+
+gameState.skillCheck.goodEnd = scoringCenter + goodSize / 2;
+
+// GREAT zone
+
+const greatSize = Math.PI * 0.10;
+
+gameState.skillCheck.greatStart = scoringCenter - greatSize / 2;
+
+gameState.skillCheck.greatEnd = scoringCenter + greatSize / 2;
 
     // Random starting position for the needle
-    gameState.skillCheck.needleAngle =
-        Math.random() * Math.PI * 2;
+    gameState.skillCheck.needleAngle = Math.random() * Math.PI * 2;
 
     // How fast the needle rotates
-    gameState.skillCheck.needleSpeed =
-        0.045;
+    gameState.skillCheck.needleSpeed = 0.045;
 
     // Record when the skill check appeared
-    gameState.skillCheck.shownAt =
-        performance.now();
+    gameState.skillCheck.shownAt = performance.now();
 
     // Clear previous reaction message
     reactionDisplay.textContent = "";
@@ -218,8 +236,7 @@ function animateSkillCheck() {
     drawSkillCheck();
 
     // Continue animation
-    gameState.skillCheck.animationFrame =
-        requestAnimationFrame(animateSkillCheck);
+    gameState.skillCheck.animationFrame = requestAnimationFrame(animateSkillCheck);
 }
 
 /*  GAME STATE */
@@ -251,8 +268,11 @@ const gameState = {
     needleAngle: 0,
     needleSpeed: 0,
 
-    successStart: 0,
-    successEnd: 0,
+    goodStart: 0,
+    goodEnd: 0,
+
+    greatStart: 0,
+    greatEnd: 0,
 
     shownAt: 0
 }
