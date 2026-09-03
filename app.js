@@ -43,6 +43,8 @@ const leaveButton = document.getElementById("leaveButton");
 const restartButton = document.getElementById("restartButton");
 const finalScore = document.getElementById("finalScore");
 
+const skillCheckSound = new Audio("audio/skillcheck.mp3");
+
 let timerInterval;
 let perkLogoClicks = 0;
 let perkLogoClickTimer;
