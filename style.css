@@ -496,12 +496,10 @@ select {
     }
 
     #skillCheckButton {
-        width: 200px;
+        width: 220px;
         height: 65px;
-        font-size: 1.5rem;
     }
 }
-
 
    
 }
