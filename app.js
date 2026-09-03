@@ -118,7 +118,6 @@ ctx.lineWidth = 14;
 
 ctx.stroke();
 
-
 // GREAT ZONE
 const greatSize = Math.PI * 0.10;
 
