@@ -37,7 +37,7 @@ const perks = [
         name: "Aftercare",
         type: "survivor",
         description: `
-        You and up to 3 survivors see achothers auras whenever: 
+        You and up to 3 survivors see eachothers auras whenever: 
         •you unhook them or they unhook you. You finish healing them, or they finish healing you. 
         this effect lasts until unhooked
         `,
@@ -204,7 +204,7 @@ const perks = [
         description: `
      While healing, you and the healed survivor make no
      noises, or grunts of pain. whenever you miss a
-     bassic skill check:
+     basic skill check:
      
         •You loose only 1% progress
         •The killer is not alerted
@@ -223,7 +223,7 @@ const perks = [
       when the killer damages that generator, the trap 
       explodes, then:
         •They are stunned for 4ss
-        •Everyone nearvy looking at the detonation is blinded
+        •Everyone nearby looking at the detonation is blinded
         `,
         image: "assets/blastmine.webp"
     },
