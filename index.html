@@ -156,32 +156,32 @@
 
 
         <!-- SKILL CHECK SCREEN -->
-        <section id="skillCheckScreen">
+       <section id="skillCheckScreen">
+    <h1>Skill Check</h1>
 
-            <h1>Skill Check</h1>
+    <div id="skillCheckStats">
+        <span id="skillCheckCorrect">Correct: 0</span>
+        <span id="skillCheckWrong">Missed: 0</span>
+    </div>
 
-            <div id="skillCheckStats">
-                <span id="skillCheckCorrect">Correct: 0</span>
-                <span id="skillCheckWrong">Missed: 0</span>
-            </div>
+    <div id="skillCheckArea">
+        <canvas id="skillCheckCanvas" width="400" height="400"></canvas>
+    </div>
 
-            <div id="skillCheckArea">
+    <button type="button" id="skillCheckStart">
+        START
+    </button>
 
-    <canvas
-        id="skillCheckCanvas"
-        width="400"
-        height="400">
-    </canvas>
+    <button type="button" id="skillCheckButton">
+        TAP
+    </button>
 
-</div>
+    <div id="reactionDisplay"></div>
 
-<button
-    type="button"
-    id="skillCheckButton">
-    TAP
-</button>
-
-            <div id="reactionDisplay"></div>
+    <button type="button" id="skillCheckLeave">
+        LEAVE
+    </button>
+</section>
 
             <button
                 type="button"
