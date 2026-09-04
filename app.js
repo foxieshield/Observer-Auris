@@ -1036,6 +1036,7 @@ leaveButton.addEventListener("click", function () {
 
 skillCheckStart.addEventListener("click", function () {
     skillCheckStart.hidden = true;
+    skillCheckButton.hidden = false;
     scheduleSkillCheck();
 });
 
