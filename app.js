@@ -57,7 +57,7 @@ const skillCheckWrong = document.getElementById("skillCheckWrong");
 
 const reactionDisplay = document.getElementById("reactionDisplay");
 
-const skillCheckLeave = document.getElementById("skillCheckLeave");
+const skillCheckReset = document.getElementById("skillCheckReset");
 
 const skillCheckContext = skillCheckCanvas.getContext("2d");
 
