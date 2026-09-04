@@ -1058,6 +1058,26 @@ skillCheckStart.addEventListener("click", function () {
     scheduleSkillCheck();
 });
 
+skillCheckReset.addEventListener("click", function () {
+    gameState.skillCheck.correct = 0;
+    gameState.skillCheck.wrong = 0;
+    gameState.skillCheck.active = false;
+
+    cancelAnimationFrame(
+        gameState.skillCheck.animationFrame
+    );
+
+    gameState.skillCheck.animationFrame = null;
+
+    skillCheckStart.hidden = false;
+    skillCheckButton.hidden = true;
+
+    reactionDisplay.textContent = "";
+
+    updateSkillCheckStats();
+    drawSkillCheck();
+});
+
 /* =========================================
    EASTER EGG
    ========================================= */
