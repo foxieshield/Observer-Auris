@@ -244,9 +244,11 @@ gameState.skillCheck.failAngle =
         gameState.skillCheck.animationFrame
     );
 
+  // Start animation after a short reaction window
+setTimeout(function () {
     animateSkillCheck();
-}
-
+}, 300);
+   
 //animation function//
 
 function animateSkillCheck() {
