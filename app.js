@@ -61,6 +61,8 @@ const skillCheckLeave = document.getElementById("skillCheckLeave");
 
 const skillCheckContext = skillCheckCanvas.getContext("2d");
 
+const skillCheckStart = document.getElementById("skillCheckStart");
+
 let timerInterval;
 let perkLogoClicks = 0;
 let perkLogoClickTimer;
@@ -1032,8 +1034,10 @@ leaveButton.addEventListener("click", function () {
     nextButton.hidden = true;
 });
 
-//test skill check //
-scheduleSkillCheck();
+skillCheckStart.addEventListener("click", function () {
+    skillCheckStart.hidden = true;
+    scheduleSkillCheck();
+});
 
 /* =========================================
    EASTER EGG
