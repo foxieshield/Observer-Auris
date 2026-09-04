@@ -255,8 +255,122 @@ while you are not the obsession:
         `,
         image: "assets/bloodrush.jpg"
     },
+
+       {
+        name: "Boil Over",
+        type: "survivor",
+        description: `
+        While carried by the killer:
+        •whenever the killer falls from atleast 1.25m,
+        you gain 33% of your current wiggle process
+        •your wiggles is 80% stronger
+        •within 16m, the killer cannot see hook auras
+        `,
+        image: "assets/boilover.jpg"
+    },  {
+        name: "Bond",
+        type: "survivor",
+        description: `
+        Within 36m, you see other survivors auras
+        `,
+        image: "assets/Bond.jpg"
+    },  {
+        name: "Boon: Circle Of Healing",
+        type: "survivor",
+        description: `
+        While next to a totem, bless it, creating a
+        unique boon totem that combines all your boons
+
+        Wurvivors within the boons range:
+        •while healing without medkit, they heal others
+        100% faster
+        •while injured, other survivors see their aura
+        `,
+        image: "assets/booncoh.jpg"
+    },  {
+        name: "Boon: Dark Theory",
+        type: "survivor",
+        description: `
+        While next to a totem, bless it, creating a
+        unique boon totem that combines all your boons
+
+        survivors within the boon's range gain 3% haste 
+        when leaving the range, this ends after 4s
+        `,
+        image: "assets/boondt.jpg"
+    },  {
+        name: "Boon: Exponential",
+        type: "survivor",
+        description: `
+        While next to a totem, bless it, creating
+        a unique boon totem that combines all you boons
+
+        downed survivors within boon's range:
+        •recover 100% faster
+        •can fully recover
+        `,
+        image: "assets/boone.jpg"
+    },  {
+        name: "Boon: Illumination",
+        type: "survivor",
+        description: `
+        While next to a totem, bless it, creating a
+        unique boon totem that combines all your boons
+
+        Survivors withn boon's range:
+        •see all the auras of chests
+        •see all the auras of generatos
+
+        while you have a boon, you bless
+        and cleanse 10% faster
+        `,
+        image: "assets/booni.jpg"
+    },  {
+        name: "Boon: Shadow Step",
+        type: "survivor",
+        description: `
+        While next to a totem, bless it, creating a
+        unique boon totem that combines all you boons.
+        survivors within boon's range:
+        •leave no scratch marks
+        •Their auras cannot be seen by the killer
+
+        When leaving the range, this ends after 4s
+        `,
+        image: "assets/boonshadowstep.jpg"
+    },  {
+        name: "Boon: Steadfast",
+        type: "survivor",
+        description: `
+        While next to a totem, bless it, creating a
+        unique boon totem that combines all your boons.
+
+        generators within range:
+        •regress 50% slower
+        •Survivors repair them 10% faster
+
+        Survivors within the boon's range see the auras of affected generators
+        `,
+        image: "assets/boonsteadfast.jpg"
+    },  {
+        name: "Borrowed Time",
+        type: "survivor",
+        description: `
+        Whenever you unhook a survivor:
+        •they retain their unhook endurance for 10s longer
+        •they retain unhook haste for 10s longer
+        `,
+        image: "assets/borrowedtime.jpg"
+    },  {
+        name: "Botany Knowledge",
+        type: "survivor",
+        description: `
+        You heal 50% faster
+        `,
+        image: "assets/botanyknowledge.jpg"
+    },
      
-      //---------killer perks
+      //--------- KILLER PERKS ----------- //
     {
         name: "A Nurse's Calling",
         type: "killer",
@@ -472,6 +586,118 @@ while you are not the obsession:
       •All windows are blocked for survivors for 30s
         `,
         image: "assets/cruellimits.webp"
+    },
+{
+        name: "Cull The Weak",
+        type: "killer",
+        description: `
+        whenever you hook a survivor that is not the 
+        Obsession, earn 1 token:
+        •Other survivors heal 3% slower
+        •Other survivors Repair 3% slower
+        •other survivors sabotage Hooks 3% slower
+
+        The Obsession:
+        •Heals other survivors 33% faster
+        •Unhooks other survivors 33% faster
+        `,
+        image: "assets/culltheweak.webp"
+    },
+{
+        name: "Dark Arrogance",
+        type: "killer",
+        description: `
+        You basic-vault windows 25% faster.
+
+        whenever you are blinded or pallet-stun, the
+        duration is 15% longer
+        `,
+        image: "assets/darkarrogance.webp"
+    },
+{
+        name: "Dark Devotion",
+        type: "killer",
+        description: `
+        Whnever the obsession takes damage, for 45s:
+        •your terror radius is set to 40m
+        •The obsession has your terror radius
+        •You gain imdetectable
+        `,
+        image: "assets/darkdevotion.webp"
+    },
+{
+        name: "Darkness Revealed",
+        type: "killer",
+        description: `
+        whenever you search a locker, you see auras of
+        survivors within 8m of lockers for 8s. cooldown: 30s
+        `,
+        image: "assets/darknessrevealed.webp"
+    },
+{
+        name: "Dead Man's Switch",
+        type: "killer",
+        description: `
+        When you hook a survivor, the first time a survivor
+        stops repairing a generator, it is blocked for 35s
+        Cooldown: 35s
+        `,
+        image: "assets/deadmansswitch.webp"
+    },
+{
+        name: "Deathbound",
+        type: "killer",
+        description: `
+        Whenever a survivor finishes healing another, the
+        healer screams. Then, until the healer takes 
+        damage, while they are atleast 4m away from the
+        healed survivor:
+        •the healer gains oblivious
+        •the healer sees the healed survivors aura
+        `,
+        image: "assets/deathbound.webp"
+    },
+{
+        name: "Deerstalker",
+        type: "killer",
+        description: `
+        Every 30s, the survivor with the least time in chase
+        sees your aura for 3s
+
+        While a survivor sees your aura, you seee their aura
+        `,
+        image: "assets/deerstalker.webp"
+    },
+{
+        name: "Discordance",
+        type: "killer",
+        description: `
+        Within 128m of you, whenever a generator is being
+        repaired by atleast 2 survivors, you are alerted.
+
+        while that generator is being repaired by atleast 2
+        survivors, you see its aura. when it is no longer being repaired by atleast 2 survivors, this ends
+        after 4 seconds
+        `,
+        image: "assets/discordance.webp"
+    },
+{
+        name: "Dissolution",
+        type: "killer",
+        description: `
+        3s after a survivor takes damage, for 20s, the next
+        time a survivor fast-vaults a pallet while within your
+        terror radius, it is destroyed
+        `,
+        image: "assets/dissolution.webp"
+    },
+{
+        name: "Distressing",
+        type: "killer",
+        description: `
+        terror radius is 30% larger
+        `,
+        image: "assets/distressing.webp"
     },
 
 
