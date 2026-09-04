@@ -376,7 +376,7 @@ function isAngleInsideRange(
     );
 }
 
- // STATS UPDATE //
+// STATS UPDATE //
 function updateSkillCheckStats() {
 
     skillCheckCorrect.textContent =
@@ -386,9 +386,11 @@ function updateSkillCheckStats() {
         `Missed: ${gameState.skillCheck.wrong}`;
 }
 
-//---SKILL CHECK BUTTON ADD EVENT LISTENER-----//
+
+// ---- ATTEMPT SKILL CHECK ---- //
 
 function attemptSkillCheck() {
+
     if (!gameState.skillCheck.active) return;
 
     gameState.skillCheck.active = false;
@@ -472,7 +474,10 @@ function attemptSkillCheck() {
 
     drawSkillCheck();
 }
-// ----BUTTON LISTENER---///
+
+
+// ---- BUTTON LISTENER ---- //
+
 skillCheckButton.addEventListener(
     "click",
     function () {
@@ -480,25 +485,9 @@ skillCheckButton.addEventListener(
     }
 );
 
-//----keyboard listener ----//
 
-document.addEventListener(
-    "keydown",
-    function (event) {
+// ---- KEYBOARD LISTENER ---- //
 
-        if (
-            event.code === "Space" &&
-            !event.repeat &&
-            !skillCheckScreen.hidden
-        ) {
-
-            event.preventDefault();
-
-            attemptSkillCheck();
-        }
-    }
-);
- 
 document.addEventListener(
     "keydown",
     function (event) {
