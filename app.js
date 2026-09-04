@@ -213,7 +213,7 @@ gameState.skillCheck.goodEnd = scoringCenter + goodSize / 2;
 
 // GREAT zone
 
-const greatSize = Math.PI * 0.10;
+const greatSize = Math.PI * 0.07;
 
 gameState.skillCheck.greatStart = scoringCenter - greatSize / 2;
 
@@ -283,60 +283,7 @@ function animateSkillCheck() {
 
     gameState.skillCheck.animationFrame = requestAnimationFrame(animateSkillCheck);
 }
-    // Calculate reaction time
-    const reactionTime = performance.now() - gameState.skillCheck.shownAt;
-
-    // Get the current needle angle
-    const angle = normalizeAngle( gameState.skillCheck.needleAngle);
-
-    // Get the GOOD zone
-    const goodStart = normalizeAngle( gameState.skillCheck.goodStart );
-
-    const goodEnd = normalizeAngle( gameState.skillCheck.goodEnd );
-
-    // Get the GREAT zone
-    const greatStart = normalizeAngle( gameState.skillCheck.greatStart );
-
-    const greatEnd = normalizeAngle( gameState.skillCheck.greatEnd );
-
-    // Check GREAT first
-    const isGreat = isAngleInsideRange(
-            angle,
-            greatStart,
-            greatEnd
-        );
-
-    // Then check GOOD
-    const isGood = isAngleInsideRange(
-            angle,
-            goodStart,
-            goodEnd
-        );
-
-    if (isGreat) {
-
-        gameState.skillCheck.correct++;
-
-        reactionDisplay.textContent =
-            `GREAT! — ${Math.round(reactionTime)} ms`;
-
-    } else if (isGood) {
-
-        gameState.skillCheck.correct++;
-
-        reactionDisplay.textContent =
-            `GOOD — ${Math.round(reactionTime)} ms`;
-
-    } else {
-
-        gameState.skillCheck.wrong++;
-
-        reactionDisplay.textContent =
-            `MISS — ${Math.round(reactionTime)} ms`;
-    }
-
-    updateSkillCheckStats();
-}
+   
 
 //---------- CUSTOM ANGLE---------- //
 function normalizeAngle(angle) {
