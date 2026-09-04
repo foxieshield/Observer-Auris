@@ -266,14 +266,14 @@ while you are not the obsession:
         •your wiggles is 80% stronger
         •within 16m, the killer cannot see hook auras
         `,
-        image: "assets/boilover.jpg"
+        image: "assets/boilover.webp"
     },  {
         name: "Bond",
         type: "survivor",
         description: `
         Within 36m, you see other survivors auras
         `,
-        image: "assets/Bond.jpg"
+        image: "assets/Bond.webp"
     },  {
         name: "Boon: Circle Of Healing",
         type: "survivor",
@@ -286,7 +286,7 @@ while you are not the obsession:
         100% faster
         •while injured, other survivors see their aura
         `,
-        image: "assets/booncoh.jpg"
+        image: "assets/booncoh.webp"
     },  {
         name: "Boon: Dark Theory",
         type: "survivor",
@@ -297,7 +297,7 @@ while you are not the obsession:
         survivors within the boon's range gain 3% haste 
         when leaving the range, this ends after 4s
         `,
-        image: "assets/boondt.jpg"
+        image: "assets/boondt.webp"
     },  {
         name: "Boon: Exponential",
         type: "survivor",
@@ -309,7 +309,7 @@ while you are not the obsession:
         •recover 100% faster
         •can fully recover
         `,
-        image: "assets/boone.jpg"
+        image: "assets/boone.webp"
     },  {
         name: "Boon: Illumination",
         type: "survivor",
@@ -324,7 +324,7 @@ while you are not the obsession:
         while you have a boon, you bless
         and cleanse 10% faster
         `,
-        image: "assets/booni.jpg"
+        image: "assets/booni.webp"
     },  {
         name: "Boon: Shadow Step",
         type: "survivor",
@@ -337,7 +337,7 @@ while you are not the obsession:
 
         When leaving the range, this ends after 4s
         `,
-        image: "assets/boonshadowstep.jpg"
+        image: "assets/boonshadowstep.webp"
     },  {
         name: "Boon: Steadfast",
         type: "survivor",
@@ -351,7 +351,7 @@ while you are not the obsession:
 
         Survivors within the boon's range see the auras of affected generators
         `,
-        image: "assets/boonsteadfast.jpg"
+        image: "assets/boonsteadfast.webp"
     },  {
         name: "Borrowed Time",
         type: "survivor",
@@ -360,14 +360,14 @@ while you are not the obsession:
         •they retain their unhook endurance for 10s longer
         •they retain unhook haste for 10s longer
         `,
-        image: "assets/borrowedtime.jpg"
+        image: "assets/borrowedtime.webp"
     },  {
         name: "Botany Knowledge",
         type: "survivor",
         description: `
         You heal 50% faster
         `,
-        image: "assets/botanyknowledge.jpg"
+        image: "assets/botanyknowledge.webp"
     },
      
       //--------- KILLER PERKS ----------- //
