@@ -101,7 +101,18 @@ function drawSkillCheck() {
 
     ctx.stroke();
 
-// GOOD ZONE
+// GOOD ZONE OUTLINE
+ctx.beginPath();
+ctx.arc(
+    centerX,
+    centerY,
+    radius,
+    gameState.skillCheck.goodStart,
+    gameState.skillCheck.goodEnd
+);
+ctx.strokeStyle = "#eeeeee";
+ctx.lineWidth = 18;
+ctx.stroke();
 
 // GOOD ZONE
 ctx.beginPath();
@@ -117,7 +128,7 @@ ctx.lineWidth = 14;
 ctx.stroke();
 
 // GREAT ZONE
-const greatSize = Math.PI * 0.10;
+const greatSize = Math.PI * 0.07;
 
 ctx.beginPath();
 ctx.arc(
