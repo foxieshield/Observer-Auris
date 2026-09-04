@@ -188,7 +188,7 @@ function scheduleSkillCheck() {
 
         setTimeout(function () {
             createSkillCheck();
-        }, 600);
+        }, 1100);
     }, randomDelay);
 }
 
