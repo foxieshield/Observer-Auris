@@ -222,7 +222,7 @@ gameState.skillCheck.greatEnd = scoringCenter + greatSize / 2;
     gameState.skillCheck.needleAngle = Math.random() * Math.PI * 2;
 
     // How fast the needle rotates
-    gameState.skillCheck.needleSpeed = 0.045;
+    gameState.skillCheck.needleSpeed = 0.0495;
 
     // Record when the skill check appeared
     gameState.skillCheck.shownAt = performance.now();
