@@ -243,13 +243,14 @@ gameState.skillCheck.failAngle =
     cancelAnimationFrame(
         gameState.skillCheck.animationFrame
     );
-   //----------------------below is the key just got added to close function-------------------------//
-}
+
+
   // Start animation after a short reaction window
 setTimeout(function () {
     animateSkillCheck();
 }, 300);
-   
+//----------------------below is the key just got added to close function-------------------------//
+}
 //--------------animation function---------------//
 
 function animateSkillCheck() {
